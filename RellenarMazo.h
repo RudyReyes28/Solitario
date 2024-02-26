@@ -6,5 +6,5 @@ class RellenarMazo{
 
 public:
     RellenarMazo();
-    void rellenarMazoCartas(Carta * []);
+    void rellenarMazoCartas(Carta* []);
 };

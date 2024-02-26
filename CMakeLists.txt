@@ -7,4 +7,8 @@ add_executable(Solitario main.cpp
         Carta.h
         RellenarMazo.h
         Carta.cpp
-        RellenarMazo.cpp)
+        RellenarMazo.cpp
+        ColaCartas.h
+        ColaCartas.cpp
+        Colas.h
+        Colas.cpp)

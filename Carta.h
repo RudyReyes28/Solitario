@@ -1,5 +1,6 @@
 #include <string>
-
+#ifndef CARTA_H // Si no está definido el macro CARTA_H
+#define CARTA_H // Definir el macro CARTA_H
 using namespace std;
 
 
@@ -19,7 +20,7 @@ public:
 
 };
 
-
+#endif // CARTA_H // Terminar el bloque del #ifndef
 
 
 
