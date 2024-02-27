@@ -12,6 +12,7 @@ private:
     string color;
 
 public:
+    Carta();
     Carta(int , string, string, string);
     int getValor();
     string getFigura();

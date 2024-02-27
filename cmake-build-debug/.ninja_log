@@ -1,7 +1,13 @@
 # ninja log v5
-24	1256	7306394315303675	CMakeFiles/Solitario.dir/RellenarMazo.cpp.obj	e140ec8d7f7fa86c
-6	1243	7306394315172439	CMakeFiles/Solitario.dir/main.cpp.obj	ae1dd862befa526b
-539	704	7306351141474146	Solitario.exe	174855acec5756a6
-2	293	7306396839799385	build.ninja	98c571baa559055
-28	1155	7306394314280329	CMakeFiles/Solitario.dir/Carta.cpp.obj	414fa095834d141
-1156	1551	7306394318255300	CMakeFiles/Solitario.dir/ColaCartas.cpp.obj	bbd3abe9092e3c51
+11	651	7307120564974394	CMakeFiles/Solitario.dir/RellenarMazo.cpp.obj	e140ec8d7f7fa86c
+5	1012	7307127454116799	CMakeFiles/Solitario.dir/main.cpp.obj	ae1dd862befa526b
+1012	1205	7307127455988191	Solitario.exe	c4e291aff98af0f9
+2	373	7307154871242751	build.ninja	98c571baa559055
+1242	1718	7307088294736651	CMakeFiles/Solitario.dir/Colas.cpp.obj	320fd6ee5a1a5682
+77	1199	7307088289535137	CMakeFiles/Solitario.dir/Carta.cpp.obj	414fa095834d141
+16	858	7307127452558695	CMakeFiles/Solitario.dir/BarajarMazo.cpp.obj	e3c5f2d8855dc552
+1200	1677	7307088294322577	CMakeFiles/Solitario.dir/ColaCartas.cpp.obj	bbd3abe9092e3c51
+7	527	7307091659348983	CMakeFiles/Solitario.dir/Cola.cpp.obj	9e6ddefef2837274
+7	841	7307162415316314	CMakeFiles/Solitario.dir/main.cpp.obj	ae1dd862befa526b
+14	862	7307162415523655	CMakeFiles/Solitario.dir/ImprimirCartas.cpp.obj	66f67651f447aa66
+862	1085	7307162417695335	Solitario.exe	8b36429955f8a24c

@@ -25,9 +25,9 @@ void RellenarMazo::rellenarMazoCartas(Carta* mazo []){
     mazo[20] = new Carta(8,"8<>R","DIAMANTES","ROJO");
     mazo[21] = new Carta(9,"9<>R","DIAMANTES","ROJO");
     mazo[22] = new Carta(10,"10<>R","DIAMANTES","ROJO");
-    mazo[23] = new Carta(11,"J<3R","DIAMANTES","ROJO");
-    mazo[24] = new Carta(12,"Q<3R","DIAMANTES","ROJO");
-    mazo[25] = new Carta(13,"K<3R","DIAMANTES","ROJO");
+    mazo[23] = new Carta(11,"J<>R","DIAMANTES","ROJO");
+    mazo[24] = new Carta(12,"Q<>R","DIAMANTES","ROJO");
+    mazo[25] = new Carta(13,"K<>R","DIAMANTES","ROJO");
     mazo[26] = new Carta(1,"AE3N","TREBOLES","NEGRO");
     mazo[27] = new Carta(2,"2E3N","TREBOLES","NEGRO");
     mazo[28] = new Carta(3,"3E3N","TREBOLES","NEGRO");

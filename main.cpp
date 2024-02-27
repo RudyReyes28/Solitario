@@ -1,34 +1,40 @@
 #include <iostream>
 #include "RellenarMazo.h"
-#include "ColaCartas.h"
+#include "Cola.h"
+#include "BarajarMazo.h"
+#include "ImprimirCartas.h"
 using namespace std;
 
+int obtenerTamanoCola(Cola* frente) {
+    int tamano = 0;
+    Cola* actual = frente;
 
+    while (actual != nullptr) {
+        ++tamano;
+        actual = actual->siguiente;
+    }
 
+    return tamano;
+}
 int main() {
     Carta* mazo [52];
-    ColaCartas cola;
     RellenarMazo rellenar;
     rellenar.rellenarMazoCartas(mazo);
 
-    ColaCartas * mazoFrente1 = nullptr;
-    ColaCartas * mazoFin1 = nullptr;
+    barajarMazo(mazo,52);
 
+    Cola * mazoFrente1 = nullptr;
+    Cola * mazoFin1 = nullptr;
 
-    //cola.insertarCarta(mazoFrente1,mazoFin1,*mazo[0]);
-    //cola.insertarCarta(mazoFrente1,mazoFin1,*mazo[1]);
-    //cola.insertarCarta(mazoFrente1,mazoFin1,*mazo[2]);
+    repartirCartas(mazo,52,mazoFrente1,mazoFin1);
 
     while (mazoFrente1!= nullptr){
-
-        cout<<"Carta: "<<mazoFrente1->getCarta().getFigura()<<endl;
-        //cola.sacarCarta(mazoFrente1,mazoFin1);
-
+        imprimirColas(obtenerTamanoCola(mazoFrente1),mazoFrente1->carta.getFigura());
+        cout<<endl;
+        cout<<endl;
+        mazoFrente1 = mazoFrente1->siguiente;
     }
 
-    /*for(int i=0; i<52; i++){
-        cout<<i <<" Carta: "<<mazo[i]->getFigura()<<endl;
-    }*/
 
 
 
