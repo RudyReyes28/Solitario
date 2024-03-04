@@ -85,6 +85,12 @@ build CMakeFiles/Solitario.dir/ImprimirCartas.cpp.obj: CXX_COMPILER__Solitario_u
   OBJECT_DIR = CMakeFiles\Solitario.dir
   OBJECT_FILE_DIR = CMakeFiles\Solitario.dir
 
+build CMakeFiles/Solitario.dir/Pila.cpp.obj: CXX_COMPILER__Solitario_unscanned_Debug C$:/Users/rudyo/CLionProjects/Solitario/Pila.cpp || cmake_object_order_depends_target_Solitario
+  DEP_FILE = CMakeFiles\Solitario.dir\Pila.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Solitario.dir
+  OBJECT_FILE_DIR = CMakeFiles\Solitario.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Solitario
@@ -93,7 +99,7 @@ build CMakeFiles/Solitario.dir/ImprimirCartas.cpp.obj: CXX_COMPILER__Solitario_u
 #############################################
 # Link the executable Solitario.exe
 
-build Solitario.exe: CXX_EXECUTABLE_LINKER__Solitario_Debug CMakeFiles/Solitario.dir/main.cpp.obj CMakeFiles/Solitario.dir/Carta.cpp.obj CMakeFiles/Solitario.dir/RellenarMazo.cpp.obj CMakeFiles/Solitario.dir/Cola.cpp.obj CMakeFiles/Solitario.dir/BarajarMazo.cpp.obj CMakeFiles/Solitario.dir/ImprimirCartas.cpp.obj
+build Solitario.exe: CXX_EXECUTABLE_LINKER__Solitario_Debug CMakeFiles/Solitario.dir/main.cpp.obj CMakeFiles/Solitario.dir/Carta.cpp.obj CMakeFiles/Solitario.dir/RellenarMazo.cpp.obj CMakeFiles/Solitario.dir/Cola.cpp.obj CMakeFiles/Solitario.dir/BarajarMazo.cpp.obj CMakeFiles/Solitario.dir/ImprimirCartas.cpp.obj CMakeFiles/Solitario.dir/Pila.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Solitario.dir

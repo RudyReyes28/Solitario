@@ -10,6 +10,7 @@ struct Cola {
 };
 
 void insertarCarta(Cola*& frente, Cola*& fin, Carta carta);
-void sacarCarta(Cola*& frente, Cola*& fin);
+Carta sacarCarta(Cola*& frente, Cola*& fin);
+Carta sacarUltimaCarta(Cola*& frente, Cola*& fin);
 
 #endif

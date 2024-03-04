@@ -14,8 +14,9 @@ void insertarCarta(Cola*& frente, Cola*& fin, Carta carta) {
     fin = nuevo_nodo;
 }
 
-void sacarCarta(Cola*& frente, Cola*& fin) {
+Carta sacarCarta(Cola*& frente, Cola*& fin) {
     Cola* aux = frente;
+    Carta cartaSacada = aux->carta;
 
     if (frente == fin) {
         frente = nullptr;
@@ -25,4 +26,28 @@ void sacarCarta(Cola*& frente, Cola*& fin) {
     }
 
     delete aux;
+
+    return cartaSacada;
+}
+
+
+Carta sacarUltimaCarta(Cola*& frente, Cola*& fin) {
+
+    Carta cartaSacada = fin->carta;
+
+    if (frente == fin) {
+        delete frente;
+        frente = nullptr;
+        fin = nullptr;
+    } else {
+        Cola* aux = frente;
+        while (aux->siguiente != fin) {
+            aux = aux->siguiente;
+        }
+        delete fin;
+        fin = aux;
+        fin->siguiente = nullptr;
+    }
+
+    return cartaSacada;
 }

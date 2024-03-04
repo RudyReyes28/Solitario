@@ -13,4 +13,6 @@ add_executable(Solitario main.cpp
         BarajarMazo.h
         BarajarMazo.cpp
         ImprimirCartas.h
-        ImprimirCartas.cpp)
+        ImprimirCartas.cpp
+        Pila.cpp
+        Pila.h)
