@@ -4,6 +4,7 @@
 #include "BarajarMazo.h"
 #include "ImprimirCartas.h"
 #include "Pila.h"
+#include "EscaleraCartas.h"
 
 using namespace std;
 
@@ -46,6 +47,20 @@ int main() {
     Pila*  treboles = nullptr;
     Pila*  picas = nullptr;
 
+    EscaleraCartas escalera;
+    escalera.agregar(*mazo[0]);
+    escalera.agregar(*mazo[1]);
+    escalera.agregar(*mazo[2]);
+    escalera.agregar(*mazo[3]);
+
+    escalera.mostrarInicioFin();
+    cout<<endl;
+    escalera.mostrarFinInicio();
+    cout<<endl;
+    escalera.borrarValor(*mazo[1]);
+    escalera.mostrarInicioFin();
+
+/*
     repartirCartas(mazo,52,mazoFrente1,mazoFin1);
     string cartaFigura = "  # ";
     char opcion = 's';
@@ -92,7 +107,7 @@ int main() {
     } while (opcion =='s');
 
 
-
+*/
 
 
     return 0;

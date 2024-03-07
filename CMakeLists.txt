@@ -15,4 +15,8 @@ add_executable(Solitario main.cpp
         ImprimirCartas.h
         ImprimirCartas.cpp
         Pila.cpp
-        Pila.h)
+        Pila.h
+        ListaDobleEnlazada.cpp
+        ListaDobleEnlazada.h
+        EscaleraCartas.cpp
+        EscaleraCartas.h)
