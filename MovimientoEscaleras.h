@@ -17,5 +17,9 @@ void moverStackEscaleras(Cola*& mazoFrente2, Cola*& mazoFin2,EscaleraCartas& esc
 
 void moverStackBase(Cola*& mazoFrente2, Cola*& mazoFin2, Pila*& corazones, Pila*& diamantes,Pila*& treboles, Pila*& picas);
 
+void moverEscaleraBase(EscaleraCartas& escaleraA, EscaleraCartas& escaleraB, EscaleraCartas& escaleraC, EscaleraCartas& escaleraD, EscaleraCartas& escaleraE, EscaleraCartas& escaleraF, EscaleraCartas& escaleraG,  Pila*& corazones, Pila*& diamantes,Pila*& treboles, Pila*& picas);
+
+void identificarPaloEscaleras(Pila*& palo, EscaleraCartas& escalera, Carta cartaSacar);
+
 void identificarPaloCartas(Cola*& mazoFrente2, Cola*& mazoFin2, Pila*& palo);
 #endif //SOLITARIO_MOVIMIENTOESCALERAS_H

@@ -38,10 +38,10 @@ void moverEntreEscaleras(EscaleraCartas& escaleraA, EscaleraCartas& escaleraB, E
     cin >> columnaInicial;
     cout<<"Ingresa la fila inicial (1/2/3/4/5/6/7):";
     cin >> filaInicial;
-    cin.ignore();
     cout<<"Ingresa la columna final (A/B/C/D/F/G):";
     cin >> columnaFinal;
     cin.ignore();
+
 
     // Obtener las referencias de las escaleras correspondientes
     EscaleraCartas& escaleraInicial = obtenerEscalera(columnaInicial, escaleraA, escaleraB,escaleraC, escaleraD,escaleraE, escaleraF, escaleraG);
@@ -63,7 +63,11 @@ void moverEntreEscaleras(EscaleraCartas& escaleraA, EscaleraCartas& escaleraB, E
                 }
             }else{
                 Carta cartaUltima = escaleraFinal.mostrarFin();
-                if(cartaSacar.getValor()<cartaUltima.getValor() && cartaSacar.getColor()!=cartaUltima.getColor()){
+                if(cartaSacar.getValor()==(cartaUltima.getValor()-1) && cartaSacar.getColor()!=cartaUltima.getColor()){
+                    //CONFIGURAR EL IF
+
+                    cout<<"valor inicial:"<< cartaSacar.getValor();
+                    cout<<" valor ultima:"<< cartaUltima.getValor() <<endl;
                     escaleraInicial.borrarValor(cartaSacar);
                     escaleraFinal.agregar(cartaSacar);
                 }else{
@@ -100,7 +104,10 @@ void moverStackEscaleras(Cola*& mazoFrente2, Cola*& mazoFin2,EscaleraCartas& esc
                     }
                 }else{
                     Carta cartaUltima = escaleraFinal.mostrarFin();
-                    if(cartaSacar.getValor()<cartaUltima.getValor() && cartaSacar.getColor()!=cartaUltima.getColor()){
+                    if(cartaSacar.getValor()==cartaUltima.getValor()-1 && cartaSacar.getColor()!=cartaUltima.getColor()){
+                        //CONFIGURAR EL IF
+                        cout<<"valor inicial:"<< cartaSacar.getValor();
+                        cout<<" valor ultima:"<< cartaUltima.getValor() <<endl;
                         sacarUltimaCarta(mazoFrente2,mazoFin2);
                         cartaSacar.setLevantado(true);
                         escaleraFinal.agregar(cartaSacar);
@@ -135,6 +142,33 @@ void moverStackBase(Cola*& mazoFrente2, Cola*& mazoFin2, Pila*& corazones, Pila*
     }
 }
 
+void moverEscaleraBase(EscaleraCartas& escaleraA, EscaleraCartas& escaleraB, EscaleraCartas& escaleraC, EscaleraCartas& escaleraD, EscaleraCartas& escaleraE, EscaleraCartas& escaleraF, EscaleraCartas& escaleraG,  Pila*& corazones, Pila*& diamantes,Pila*& treboles, Pila*& picas){
+    char columnaInicial;
+    cout<<"Ingresa la columna inicial (A/B/C/D/F/G):";
+    cin >> columnaInicial;
+    cin.ignore();
+
+    EscaleraCartas& escaleraInicial = obtenerEscalera(columnaInicial, escaleraA, escaleraB,escaleraC, escaleraD,escaleraE, escaleraF, escaleraG);
+
+    if(escaleraInicial.obtenerTamano()>0){
+        Carta cartaUltima = escaleraInicial.mostrarFin();
+
+        if(cartaUltima.getPalo() == "CORAZONES"){
+            identificarPaloEscaleras(corazones,escaleraInicial, cartaUltima);
+        }else if(cartaUltima.getPalo() == "DIAMANTES"){
+            identificarPaloEscaleras(diamantes,escaleraInicial, cartaUltima);
+        }else if(cartaUltima.getPalo() == "TREBOLES"){
+            identificarPaloEscaleras(treboles,escaleraInicial, cartaUltima);
+        }else if(cartaUltima.getPalo() == "PICAS"){
+            identificarPaloEscaleras(picas,escaleraInicial, cartaUltima);
+        }
+    }else{
+        cout<<"No hay cartas por mover"<<endl;
+
+    }
+
+}
+
 void identificarPaloCartas(Cola*& mazoFrente2, Cola*& mazoFin2, Pila*& palo){
     Carta cartaSacar = mazoFin2->carta;
 
@@ -155,4 +189,22 @@ void identificarPaloCartas(Cola*& mazoFrente2, Cola*& mazoFin2, Pila*& palo){
         }
 
 
+}
+
+void identificarPaloEscaleras(Pila*& palo, EscaleraCartas& escalera, Carta cartaSacar){
+    if(palo == nullptr ){
+        if(cartaSacar.getValor() == 1) {
+            escalera.borrarValor(cartaSacar);
+            cartaSacar.setLevantado(true);
+            insertarCartaAPila(palo, cartaSacar);
+        }else{
+            cout<<"No se puede agregar la carta"<<endl;
+        }
+    }else if(palo->carta.getValor() == cartaSacar.getValor()-1){
+        escalera.borrarValor(cartaSacar);
+        cartaSacar.setLevantado(true);
+        insertarCartaAPila(palo, cartaSacar);
+    }else{
+        cout<<"No se puede agregar la carta"<<endl;
+    }
 }

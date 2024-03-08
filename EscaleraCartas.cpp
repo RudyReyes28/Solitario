@@ -63,10 +63,13 @@ void EscaleraCartas::borrarValor(Carta carta)
 {
     if (inicio == nullptr) {
         cout << "No se puede borrar el elemento " << carta.getFigura() << " porque la lista esta vacia!" << endl;
-    }if (inicio->carta.getFigura() == carta.getFigura()) {
+    }else if (inicio->carta.getFigura() == carta.getFigura()) {
         Lista* borrarInicio = inicio;
         inicio = inicio->der;
-        inicio->izq = nullptr;
+        //inicio->izq = nullptr;
+        if (inicio != nullptr) {
+            inicio->izq = nullptr;
+        }
         delete borrarInicio;
 
     }else if (fin->carta.getFigura() == carta.getFigura()) {

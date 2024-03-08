@@ -67,8 +67,8 @@ int main() {
         cout<<"2. Mover carta del stock a la escalera"<<endl;
         cout<<"3. Mover cartas entre escaleras"<<endl;
         cout<<"4. Mover del stock a base (4 pilas)"<<endl;
-        cout<<"4. Mover de la escalera a base (4 pilas)"<<endl;
-        cout<<"6. Mover de la escalera a base (4 pilas)"<<endl;
+        cout<<"5. Mover de la escalera a base (4 pilas)"<<endl;
+        cout<<"6. Salir del juego"<<endl;
         cout<<"Ingrese la opcion:";
         cin >> opcion;
         cin.ignore();
@@ -104,7 +104,10 @@ int main() {
 
         }else if(opcion == 4){
             moverStackBase(mazoFrente2, mazoFin2,corazones,diamantes,treboles,picas);
-        }1
+
+        }else if(opcion == 5){
+            moverEscaleraBase(escaleraA, escaleraB, escaleraC, escaleraD, escaleraE, escaleraF, escaleraG,corazones,diamantes,treboles,picas);
+        }
 
     }while(opcion != 6);
 
