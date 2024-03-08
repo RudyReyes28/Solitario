@@ -19,9 +19,46 @@ void barajarMazo(Carta* mazo[], int tamano) {
     }
 }
 
-void repartirCartas(Carta* mazo[], int tamano,Cola *& frente,Cola*& fin) {
+void repartirCartas(Carta* mazo[],Cola *& frente,Cola*& fin) {
     for(int i=0; i<24; i++){
+
         insertarCarta(frente,fin,*mazo[i]);
     }
 
+}
+
+void repartirCartasEscalera(Carta* mazo[], EscaleraCartas& escaleraA,EscaleraCartas& escaleraB,EscaleraCartas& escaleraC,EscaleraCartas& escaleraD,EscaleraCartas& escaleraE,EscaleraCartas& escaleraF,EscaleraCartas& escaleraG){
+    for(int i=24; i<52; i++){
+        if(i==24){
+            Carta carta = *mazo[i];
+            carta.setLevantado(true);
+            escaleraA.agregar(carta);
+
+        }else if(i== 25 || i==26){
+            Carta carta = *mazo[i];
+            if(i==26){carta.setLevantado(true);}
+            escaleraB.agregar(carta);
+        }else if(i>26 && i<30){
+            Carta carta = *mazo[i];
+            if(i==29){carta.setLevantado(true);}
+            escaleraC.agregar(carta);
+        }else if(i>=30 && i<=33){
+            Carta carta = *mazo[i];
+            if(i==33){carta.setLevantado(true);}
+            escaleraD.agregar(carta);
+        }else if(i>=34 && i<=38){
+            Carta carta = *mazo[i];
+            if(i==38){carta.setLevantado(true);}
+            escaleraE.agregar(carta);
+        }else if(i>=39 && i<=44){
+            Carta carta = *mazo[i];
+            if(i==44){carta.setLevantado(true);}
+            escaleraF.agregar(carta);
+        }else if(i>=45){
+            Carta carta = *mazo[i];
+            if(i==51){carta.setLevantado(true);}
+            escaleraG.agregar(carta);
+        }
+
+    }
 }

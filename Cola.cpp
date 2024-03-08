@@ -1,5 +1,4 @@
 #include "Cola.h"
-
 void insertarCarta(Cola*& frente, Cola*& fin, Carta carta) {
     Cola* nuevo_nodo = new Cola();
     nuevo_nodo->carta = carta;

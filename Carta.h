@@ -10,6 +10,7 @@ private:
     string figura;
     string palo;
     string color;
+    bool levantado;
 
 public:
     Carta();
@@ -18,6 +19,8 @@ public:
     string getFigura();
     string getPalo();
     string getColor();
+    bool getLevantado();
+    void setLevantado(bool valor);
 
 };
 

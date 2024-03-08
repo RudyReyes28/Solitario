@@ -19,4 +19,6 @@ add_executable(Solitario main.cpp
         ListaDobleEnlazada.cpp
         ListaDobleEnlazada.h
         EscaleraCartas.cpp
-        EscaleraCartas.h)
+        EscaleraCartas.h
+        MovimientoEscaleras.cpp
+        MovimientoEscaleras.h)

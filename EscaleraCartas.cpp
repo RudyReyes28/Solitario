@@ -54,9 +54,9 @@ void EscaleraCartas::mostrarInicio()
     cout << "Primer elemento: " << inicio->carta.getFigura() << endl;
 }
 
-void EscaleraCartas::mostrarFin()
+Carta EscaleraCartas::mostrarFin()
 {
-    cout << "Ultimo elemento: " << fin->carta.getFigura() << endl;
+    return fin->carta;
 }
 
 void EscaleraCartas::borrarValor(Carta carta)
@@ -72,6 +72,7 @@ void EscaleraCartas::borrarValor(Carta carta)
     }else if (fin->carta.getFigura() == carta.getFigura()) {
         Lista* borrarFin = fin;
         fin = fin->izq;
+        fin->carta.setLevantado(true);
         fin->der = nullptr;
         delete borrarFin;
     }else {
@@ -93,4 +94,33 @@ void EscaleraCartas::borrarValor(Carta carta)
             reco=reco->der;
         }
     }
+}
+
+int EscaleraCartas::obtenerTamano() {
+    int tamano = 0;
+    Lista* actual = inicio;
+
+    while (actual != nullptr) {
+        tamano++;
+        actual = actual->der;  // Avanza al siguiente nodo
+    }
+
+    return tamano;
+
+}
+
+Carta EscaleraCartas::obtenerCartaEnPosicion(int posicion) {
+    int tamano=0;
+    Carta carta;
+    Lista* actual = inicio;
+
+    while (actual != nullptr) {
+        if(tamano == posicion){
+            return actual->carta;
+        }
+        tamano++;
+        actual = actual->der;  // Avanza al siguiente nodo
+    }
+
+    return carta;
 }

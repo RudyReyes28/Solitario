@@ -5,6 +5,7 @@
 #include "ImprimirCartas.h"
 #include "Pila.h"
 #include "EscaleraCartas.h"
+#include "MovimientoEscaleras.h"
 
 using namespace std;
 
@@ -28,6 +29,8 @@ string obtenerFigura(Cola* fin){
 
     return cartaFigura;
 }
+
+
 int main() {
     Carta* mazo [52];
     RellenarMazo rellenar;
@@ -35,11 +38,13 @@ int main() {
 
     barajarMazo(mazo,52);
 
+    //COLAS PARA LOS PRIMEROS DOS MAZOS
     Cola * mazoFrente1 = nullptr;
     Cola * mazoFin1 = nullptr;
 
     Cola* mazoFrente2 = nullptr;
     Cola * mazoFin2 = nullptr;
+
 
     //PILAS PARA LOS ULTIMOS 4 MAZOS
     Pila*  corazones = nullptr;
@@ -47,21 +52,31 @@ int main() {
     Pila*  treboles = nullptr;
     Pila*  picas = nullptr;
 
-    EscaleraCartas escalera;
-    escalera.agregar(*mazo[0]);
-    escalera.agregar(*mazo[1]);
-    escalera.agregar(*mazo[2]);
-    escalera.agregar(*mazo[3]);
+    //LISTAS ENLAZADAS PARA LAS ESCALERAS
+    EscaleraCartas escaleraA;
+    EscaleraCartas escaleraB;
+    EscaleraCartas escaleraC;
+    EscaleraCartas escaleraD;
+    EscaleraCartas escaleraE;
+    EscaleraCartas escaleraF;
+    EscaleraCartas escaleraG;
 
-    escalera.mostrarInicioFin();
-    cout<<endl;
-    escalera.mostrarFinInicio();
-    cout<<endl;
-    escalera.borrarValor(*mazo[1]);
-    escalera.mostrarInicioFin();
+    repartirCartas(mazo,mazoFrente1,mazoFin1);
+    repartirCartasEscalera(mazo,escaleraA,escaleraB,escaleraC,escaleraD,escaleraE,escaleraF,escaleraG);
+
+    //imprimirColas(obtenerTamanoCola(mazoFrente1),"  # ");
+    //cout<<endl;
+    imprimirEscaleras(escaleraA,escaleraB,escaleraC,escaleraD,escaleraE,escaleraF,escaleraG);
+    //cout<<endl;
+    //imprimirPilas(corazones,diamantes,treboles,picas);
+    do {
+        moverEntreEscaleras(escaleraA, escaleraB, escaleraC, escaleraD, escaleraE, escaleraF, escaleraG);
+        cout<<endl;
+        imprimirEscaleras(escaleraA,escaleraB,escaleraC,escaleraD,escaleraE,escaleraF,escaleraG);
+    }while(true);
 
 /*
-    repartirCartas(mazo,52,mazoFrente1,mazoFin1);
+
     string cartaFigura = "  # ";
     char opcion = 's';
     imprimirColas(obtenerTamanoCola(mazoFrente1),cartaFigura);
@@ -107,8 +122,8 @@ int main() {
     } while (opcion =='s');
 
 
-*/
 
+*/
 
     return 0;
 }

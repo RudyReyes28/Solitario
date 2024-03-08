@@ -18,8 +18,10 @@ class EscaleraCartas{
         void mostrarInicioFin();
         void mostrarFinInicio();
         void mostrarInicio();
-        void mostrarFin();
+        Carta mostrarFin();
         void borrarValor(Carta carta);
+        int obtenerTamano();
+        Carta obtenerCartaEnPosicion(int posicion);
 };
 
 #endif //SOLITARIO_ESCALERACARTAS_H
