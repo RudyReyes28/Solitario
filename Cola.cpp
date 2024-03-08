@@ -50,3 +50,15 @@ Carta sacarUltimaCarta(Cola*& frente, Cola*& fin) {
 
     return cartaSacada;
 }
+
+int obtenerTamanoCola(Cola* frente) {
+    int tamano = 0;
+    Cola* actual = frente;
+
+    while (actual != nullptr) {
+        ++tamano;
+        actual = actual->siguiente;
+    }
+
+    return tamano;
+}

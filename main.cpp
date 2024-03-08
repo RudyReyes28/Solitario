@@ -9,17 +9,6 @@
 
 using namespace std;
 
-int obtenerTamanoCola(Cola* frente) {
-    int tamano = 0;
-    Cola* actual = frente;
-
-    while (actual != nullptr) {
-        ++tamano;
-        actual = actual->siguiente;
-    }
-
-    return tamano;
-}
 
 string obtenerFigura(Cola* fin){
     string cartaFigura = "  # ";
@@ -64,16 +53,60 @@ int main() {
     repartirCartas(mazo,mazoFrente1,mazoFin1);
     repartirCartasEscalera(mazo,escaleraA,escaleraB,escaleraC,escaleraD,escaleraE,escaleraF,escaleraG);
 
-    //imprimirColas(obtenerTamanoCola(mazoFrente1),"  # ");
-    //cout<<endl;
-    imprimirEscaleras(escaleraA,escaleraB,escaleraC,escaleraD,escaleraE,escaleraF,escaleraG);
-    //cout<<endl;
-    //imprimirPilas(corazones,diamantes,treboles,picas);
+    int opcion=0;
+    string cartaFigura = "  # ";
     do {
-        moverEntreEscaleras(escaleraA, escaleraB, escaleraC, escaleraD, escaleraE, escaleraF, escaleraG);
-        cout<<endl;
-        imprimirEscaleras(escaleraA,escaleraB,escaleraC,escaleraD,escaleraE,escaleraF,escaleraG);
-    }while(true);
+        cartaFigura = obtenerFigura(mazoFin2);
+        int cantidadCartas = obtenerTamanoCola(mazoFrente1);
+        imprimirColas(cantidadCartas,cartaFigura);
+        imprimirEscaleras(escaleraA, escaleraB, escaleraC, escaleraD, escaleraE, escaleraF, escaleraG);
+        imprimirPilas(corazones,diamantes,treboles,picas);
+        cout << endl;
+        cout<<"--------- SOLITARIO ------------"<<endl;
+        cout<<"1. Levantar cartas del stock"<<endl;
+        cout<<"2. Mover carta del stock a la escalera"<<endl;
+        cout<<"3. Mover cartas entre escaleras"<<endl;
+        cout<<"4. Mover del stock a base (4 pilas)"<<endl;
+        cout<<"4. Mover de la escalera a base (4 pilas)"<<endl;
+        cout<<"6. Mover de la escalera a base (4 pilas)"<<endl;
+        cout<<"Ingrese la opcion:";
+        cin >> opcion;
+        cin.ignore();
+        if(opcion == 1){
+             cantidadCartas = obtenerTamanoCola(mazoFrente1);
+            if(cantidadCartas>0){
+                Carta cartaSacada = sacarCarta(mazoFrente1,mazoFin1);
+                insertarCarta(mazoFrente2,mazoFin2,cartaSacada);
+            }else{
+                cout<<"Reinicie el stock"<<endl;
+            }
+
+            if(cantidadCartas == 0){
+                char reiniciarStack;
+                cout<<"1. Reiniciar Stack (S/N): "<<endl;
+                cin >> reiniciarStack;
+                cin.ignore();
+                cout<<endl;
+
+                if(reiniciarStack == 'S') {
+                    while (mazoFrente2 != nullptr) {
+                        Carta nuevaCarta = sacarCarta(mazoFrente2, mazoFin2);
+                        insertarCarta(mazoFrente1, mazoFin1, nuevaCarta);
+                    }
+                }
+            }
+        }else if(opcion == 2){
+            moverStackEscaleras(mazoFrente2,mazoFin2,escaleraA, escaleraB, escaleraC, escaleraD, escaleraE, escaleraF, escaleraG);
+
+        }else if(opcion == 3) {
+            moverEntreEscaleras(escaleraA, escaleraB, escaleraC, escaleraD, escaleraE, escaleraF, escaleraG);
+
+
+        }else if(opcion == 4){
+            moverStackBase(mazoFrente2, mazoFin2,corazones,diamantes,treboles,picas);
+        }1
+
+    }while(opcion != 6);
 
 /*
 
@@ -95,14 +128,7 @@ int main() {
         imprimirColas(cantidadCartas,cartaFigura);
 
 
-        if(cantidadCartas == 0){
-            while (mazoFrente2!= nullptr){
-                Carta nuevaCarta = sacarCarta(mazoFrente2,mazoFin2);
-                insertarCarta(mazoFrente1,mazoFin1,nuevaCarta);
-            }
-             cantidadCartas = obtenerTamanoCola(mazoFrente1);
-            imprimirColas(cantidadCartas,"  # ");
-        }
+
         char opcionMazo2;
         cout<<"Sacar carta del segundo mazo: (s/n) "<<endl;
         cin>>opcionMazo2;

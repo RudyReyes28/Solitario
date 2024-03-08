@@ -12,5 +12,5 @@ struct Cola {
 void insertarCarta(Cola*& frente, Cola*& fin, Carta carta);
 Carta sacarCarta(Cola*& frente, Cola*& fin);
 Carta sacarUltimaCarta(Cola*& frente, Cola*& fin);
-
+int obtenerTamanoCola(Cola* frente);
 #endif
