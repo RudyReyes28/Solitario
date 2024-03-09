@@ -127,3 +127,28 @@ Carta EscaleraCartas::obtenerCartaEnPosicion(int posicion) {
 
     return carta;
 }
+
+void EscaleraCartas::siguienteAnterior(int posicion){
+        int tamano = 0;
+        Lista* actual = inicio;
+
+        while (actual != nullptr) {
+            if (tamano == posicion) {
+                // Verificar y modificar la carta del nodo anterior
+                if (actual->izq != nullptr) {
+                    actual->izq->carta.setLevantado(true);
+                }
+
+                // Verificar y modificar la carta del nodo siguiente
+                if (actual->der != nullptr) {
+                    actual->der->carta.setLevantado(true);
+                }
+
+                // Romper el bucle ya que hemos realizado las modificaciones
+                break;
+            }
+
+            tamano++;
+            actual = actual->der;  // Avanza al siguiente nodo
+        }
+}

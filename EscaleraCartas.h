@@ -22,6 +22,7 @@ class EscaleraCartas{
         void borrarValor(Carta carta);
         int obtenerTamano();
         Carta obtenerCartaEnPosicion(int posicion);
+        void siguienteAnterior(int posicion);
 };
 
 #endif //SOLITARIO_ESCALERACARTAS_H

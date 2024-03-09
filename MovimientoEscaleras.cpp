@@ -4,6 +4,7 @@
 #include <iostream>
 #include "MovimientoEscaleras.h"
 
+
 using namespace std;
 EscaleraCartas& obtenerEscalera(char columna, EscaleraCartas& escaleraA, EscaleraCartas& escaleraB, EscaleraCartas& escaleraC, EscaleraCartas& escaleraD, EscaleraCartas& escaleraE, EscaleraCartas& escaleraF, EscaleraCartas& escaleraG) {
     switch (columna) {
@@ -221,4 +222,69 @@ void identificarPaloEscaleras(Pila*& palo, EscaleraCartas& escalera, Carta carta
     }else{
         cout<<"No se puede agregar la carta"<<endl;
     }
+}
+
+void verSiguienteYAnterior(EscaleraCartas escaleraA, EscaleraCartas escaleraB, EscaleraCartas escaleraC, EscaleraCartas escaleraD, EscaleraCartas escaleraE, EscaleraCartas escaleraF, EscaleraCartas escaleraG){
+    char columnaInicial;
+    int filaInicial;
+
+    cout<<"Ingresa la columna de la carta a visualizar (A/B/C/D/F/G):";
+    cin >> columnaInicial;
+    cout<<"Ingresa la fila de la carta a visualizar (1/2/3/4/5/6/7):";
+    cin >> filaInicial;
+    cin.ignore();
+
+
+    EscaleraCartas escaleraInicial;
+    switch (columnaInicial) {
+        case 'A':
+            crearCopiarListas(escaleraInicial, escaleraA);
+            escaleraInicial.siguienteAnterior(filaInicial-1);
+            imprimirEscaleras(escaleraInicial,escaleraB,escaleraC, escaleraD,escaleraE, escaleraF, escaleraG);
+            break;
+        case 'B':
+            crearCopiarListas(escaleraInicial, escaleraB);
+            escaleraInicial.siguienteAnterior(filaInicial-1);
+            imprimirEscaleras(escaleraA,escaleraInicial,escaleraC, escaleraD,escaleraE, escaleraF, escaleraG);
+            break;
+        case 'C':
+            crearCopiarListas(escaleraInicial, escaleraC);
+            escaleraInicial.siguienteAnterior(filaInicial-1);
+            imprimirEscaleras(escaleraA,escaleraB,escaleraInicial, escaleraD,escaleraE, escaleraF, escaleraG);
+            break;
+        case 'D':
+            crearCopiarListas(escaleraInicial, escaleraD);
+            escaleraInicial.siguienteAnterior(filaInicial-1);
+            imprimirEscaleras(escaleraA,escaleraB,escaleraC, escaleraInicial,escaleraE, escaleraF, escaleraG);
+            break;
+        case 'E':
+            crearCopiarListas(escaleraInicial, escaleraE);
+            escaleraInicial.siguienteAnterior(filaInicial-1);
+            imprimirEscaleras(escaleraA,escaleraB,escaleraC, escaleraD,escaleraInicial, escaleraF, escaleraG);
+            break;
+        case 'F':
+            crearCopiarListas(escaleraInicial, escaleraF);
+            escaleraInicial.siguienteAnterior(filaInicial-1);
+            imprimirEscaleras(escaleraA,escaleraB,escaleraC, escaleraD,escaleraE, escaleraInicial, escaleraG);
+            break;
+        case 'G':
+            crearCopiarListas(escaleraInicial, escaleraG);
+            escaleraInicial.siguienteAnterior(filaInicial-1);
+            imprimirEscaleras(escaleraA,escaleraB,escaleraC, escaleraD,escaleraE, escaleraF, escaleraInicial);
+            break;
+        default:
+            cout<<"Columna no valida"<<endl;
+    }
+
+
+}
+
+void crearCopiarListas(EscaleraCartas& escaleraCopia, EscaleraCartas original){
+    int cantidadElementos = original.obtenerTamano();
+    for(int i= 0; i< cantidadElementos; i++){
+        Carta carta = original.obtenerCartaEnPosicion(i);
+        escaleraCopia.agregar(carta);
+    }
+
+
 }

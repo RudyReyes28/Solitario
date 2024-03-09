@@ -84,7 +84,8 @@ int main() {
         cout<<"3. Mover cartas entre escaleras"<<endl;
         cout<<"4. Mover del stock a base (4 pilas)"<<endl;
         cout<<"5. Mover de la escalera a base (4 pilas)"<<endl;
-        cout<<"6. Salir del juego"<<endl;
+        cout<<"6. Ver el siguiente y anterior"<<endl;
+        cout<<"7. Salir del juego"<<endl;
         cout<<"Ingrese la opcion:";
         cin >> opcion;
         cin.ignore();
@@ -123,15 +124,17 @@ int main() {
 
         }else if(opcion == 5){
             moverEscaleraBase(escaleraA, escaleraB, escaleraC, escaleraD, escaleraE, escaleraF, escaleraG,corazones,diamantes,treboles,picas);
+        }else if(opcion == 6){
+            verSiguienteYAnterior(escaleraA,escaleraB,escaleraC,escaleraD,escaleraE,escaleraF,escaleraG);
         }
 
         if(verificarGanador(corazones,diamantes,treboles,picas)){
             cout<<"HA GANADO"<<endl;
-            opcion = 6;
+            opcion = 7;
         }
 
 
-    }while(opcion != 6);
+    }while(opcion != 7);
 
 
 
