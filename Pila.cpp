@@ -10,3 +10,15 @@ void insertarCartaAPila(Pila* &pila, Carta carta){
     nuevaPila->siguiente = pila;
     pila = nuevaPila;
 }
+
+int obtenerTamanoPila(Pila* pila){
+    int tamano = 0;
+    Pila* actual = pila;
+
+    while (actual != nullptr) {
+        tamano++;
+        actual = actual->siguiente;
+    }
+
+    return tamano;
+}

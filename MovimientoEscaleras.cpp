@@ -47,38 +47,52 @@ void moverEntreEscaleras(EscaleraCartas& escaleraA, EscaleraCartas& escaleraB, E
     EscaleraCartas& escaleraInicial = obtenerEscalera(columnaInicial, escaleraA, escaleraB,escaleraC, escaleraD,escaleraE, escaleraF, escaleraG);
     EscaleraCartas& escaleraFinal = obtenerEscalera(columnaFinal,escaleraA, escaleraB,escaleraC, escaleraD,escaleraE, escaleraF, escaleraG);
 
-    if(escaleraInicial.obtenerTamano()<=filaInicial && escaleraInicial.obtenerTamano()>0){
+    if(filaInicial<=escaleraInicial.obtenerTamano() && escaleraInicial.obtenerTamano()>0){
         Carta cartaSacar = escaleraInicial.obtenerCartaEnPosicion(filaInicial-1);
-        int pCartaUltima = escaleraFinal.obtenerTamano();
+
+        int auxiliarFila = filaInicial;
+        int tamanoPrimeraEscalera = escaleraInicial.obtenerTamano();
 
 
         if(cartaSacar.getLevantado()){
-            if(pCartaUltima == 0){
-                if(cartaSacar.getValor() == 13){
-                    //HACEMOS EL MOVIMIENTO
-                    escaleraInicial.borrarValor(cartaSacar);
-                    escaleraFinal.agregar(cartaSacar);
-                }else{
-                    cout<<"No se mover esta carta, tiene que ser del tipo KING"<<endl;
-                }
-            }else{
-                Carta cartaUltima = escaleraFinal.mostrarFin();
-                if(cartaSacar.getValor()==(cartaUltima.getValor()-1) && cartaSacar.getColor()!=cartaUltima.getColor()){
-                    //CONFIGURAR EL IF
+            while(auxiliarFila <= tamanoPrimeraEscalera) {
+                int pCartaUltima = escaleraFinal.obtenerTamano();
+                cartaSacar = escaleraInicial.obtenerCartaEnPosicion(filaInicial-1);
 
-                    cout<<"valor inicial:"<< cartaSacar.getValor();
-                    cout<<" valor ultima:"<< cartaUltima.getValor() <<endl;
-                    escaleraInicial.borrarValor(cartaSacar);
-                    escaleraFinal.agregar(cartaSacar);
-                }else{
-                    cout<<"No se puede sacar esta carta"<<endl;
+
+                if (pCartaUltima == 0) {
+                    if (cartaSacar.getValor() == 13) {
+                        //HACEMOS EL MOVIMIENTO
+                        escaleraInicial.borrarValor(cartaSacar);
+                        escaleraFinal.agregar(cartaSacar);
+                    } else {
+                        cout << "No se mover esta carta, tiene que ser del tipo KING" << endl;
+                    }
+                } else {
+                    Carta cartaUltima = escaleraFinal.mostrarFin();
+
+                    if (cartaSacar.getValor() == (cartaUltima.getValor() - 1) &&
+                        cartaSacar.getColor() != cartaUltima.getColor()) {
+                        //CONFIGURAR EL IF
+
+                        cout << "valor inicial:" << cartaSacar.getValor();
+                        cout << " valor ultima:" << cartaUltima.getValor() << endl;
+                        escaleraInicial.borrarValor(cartaSacar);
+                        escaleraFinal.agregar(cartaSacar);
+                    }else {
+                        cout << "No se puede sacar esta carta" << endl;
+                    }
                 }
+
+                auxiliarFila++;
             }
 
         }else{
             cout<<"No se puede sacar esta carta"<<endl;
         }
 
+    }else{
+        cout<<"No se puede sacar esta carta"<<endl;
     }
 }
 

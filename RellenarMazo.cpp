@@ -38,22 +38,22 @@ void RellenarMazo::rellenarMazoCartas(Carta* mazo []){
     mazo[33] = new Carta(8,"8E3N","TREBOLES","NEGRO");
     mazo[34] = new Carta(9,"9E3N","TREBOLES","NEGRO");
     mazo[35] = new Carta(10,"10E3N","TREBOLES","NEGRO");
-    mazo[36] = new Carta(11,"J<3R","TREBOLES","NEGRO");
-    mazo[37] = new Carta(12,"Q<3R","TREBOLES","NEGRO");
-    mazo[38] = new Carta(13,"K<3R","TREBOLES","NEGRO");
-    mazo[39] = new Carta(1,"A!!R","PICAS","NEGRO");
-    mazo[40] = new Carta(2,"2!!R","PICAS","NEGRO");
-    mazo[41] = new Carta(3,"3!!R","PICAS","NEGRO");
-    mazo[42] = new Carta(4,"4!!R","PICAS","NEGRO");
-    mazo[43] = new Carta(5,"5!!R","PICAS","NEGRO");
-    mazo[44] = new Carta(6,"6!!R","PICAS","NEGRO");
-    mazo[45] = new Carta(7,"7!!R","PICAS","NEGRO");
-    mazo[46] = new Carta(8,"8!!R","PICAS","NEGRO");
-    mazo[47] = new Carta(9,"9!!R","PICAS","NEGRO");
-    mazo[48] = new Carta(10,"10!!R","PICAS","NEGRO");
-    mazo[49] = new Carta(11,"J!!R","PICAS","NEGRO");
-    mazo[50] = new Carta(12,"Q!!R","PICAS","NEGRO");
-    mazo[51] = new Carta(13,"K!!R","PICAS","NEGRO");
+    mazo[36] = new Carta(11,"JE3N","TREBOLES","NEGRO");
+    mazo[37] = new Carta(12,"QE3N","TREBOLES","NEGRO");
+    mazo[38] = new Carta(13,"KE3N","TREBOLES","NEGRO");
+    mazo[39] = new Carta(1,"A!!N","PICAS","NEGRO");
+    mazo[40] = new Carta(2,"2!!N","PICAS","NEGRO");
+    mazo[41] = new Carta(3,"3!!N","PICAS","NEGRO");
+    mazo[42] = new Carta(4,"4!!N","PICAS","NEGRO");
+    mazo[43] = new Carta(5,"5!!N","PICAS","NEGRO");
+    mazo[44] = new Carta(6,"6!!N","PICAS","NEGRO");
+    mazo[45] = new Carta(7,"7!!N","PICAS","NEGRO");
+    mazo[46] = new Carta(8,"8!!N","PICAS","NEGRO");
+    mazo[47] = new Carta(9,"9!!N","PICAS","NEGRO");
+    mazo[48] = new Carta(10,"10!!N","PICAS","NEGRO");
+    mazo[49] = new Carta(11,"J!!N","PICAS","NEGRO");
+    mazo[50] = new Carta(12,"Q!!N","PICAS","NEGRO");
+    mazo[51] = new Carta(13,"K!!N","PICAS","NEGRO");
 
 
 };

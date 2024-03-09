@@ -19,6 +19,22 @@ string obtenerFigura(Cola* fin){
     return cartaFigura;
 }
 
+bool verificarGanador(Pila*  corazones,Pila*  diamantes, Pila*  treboles,Pila*  picas){
+
+
+    int cantCorazones = obtenerTamanoPila(corazones);
+    int cantDiamantes = obtenerTamanoPila(diamantes);
+    int cantTreboles = obtenerTamanoPila(treboles);
+    int cantPicas = obtenerTamanoPila(picas);
+
+    if(cantCorazones==13 && cantDiamantes==13 && cantTreboles == 13 && cantPicas == 13){
+        return true;
+    }else{
+        return false;
+    }
+
+
+}
 
 int main() {
     Carta* mazo [52];
@@ -109,50 +125,15 @@ int main() {
             moverEscaleraBase(escaleraA, escaleraB, escaleraC, escaleraD, escaleraE, escaleraF, escaleraG,corazones,diamantes,treboles,picas);
         }
 
-    }while(opcion != 6);
-
-/*
-
-    string cartaFigura = "  # ";
-    char opcion = 's';
-    imprimirColas(obtenerTamanoCola(mazoFrente1),cartaFigura);
-    cout<<endl;
-    imprimirPilas(corazones,diamantes,treboles,picas);
-    do{
-
-        cout<<"Sacar carta: "<<endl;
-        cin>>opcion;
-        cin.ignore();
-        Carta cartaSacada = sacarCarta(mazoFrente1,mazoFin1);
-        insertarCarta(mazoFrente2,mazoFin2,cartaSacada);
-
-        cartaFigura = obtenerFigura(mazoFin2);
-        int cantidadCartas = obtenerTamanoCola(mazoFrente1);
-        imprimirColas(cantidadCartas,cartaFigura);
-
-
-
-        char opcionMazo2;
-        cout<<"Sacar carta del segundo mazo: (s/n) "<<endl;
-        cin>>opcionMazo2;
-        cin.ignore();
-        if(opcionMazo2 == 's'){
-            Carta ultimaCarta = sacarUltimaCarta(mazoFrente2, mazoFin2);
-            if(mazoFin2 != nullptr){
-                cartaFigura = mazoFin2->carta.getFigura();
-                cantidadCartas = obtenerTamanoCola(mazoFrente1);
-                imprimirColas(cantidadCartas,cartaFigura);
-            }
-
-
+        if(verificarGanador(corazones,diamantes,treboles,picas)){
+            cout<<"HA GANADO"<<endl;
+            opcion = 6;
         }
 
 
-    } while (opcion =='s');
+    }while(opcion != 6);
 
 
-
-*/
 
     return 0;
 }

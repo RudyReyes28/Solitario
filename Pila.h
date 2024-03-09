@@ -13,5 +13,6 @@ struct Pila{
 };
 
 void insertarCartaAPila(Pila* &pila, Carta carta);
+int obtenerTamanoPila(Pila* pila);
 
 #endif //SOLITARIO_PILA_H
